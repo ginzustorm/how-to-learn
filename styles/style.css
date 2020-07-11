@@ -13,13 +13,6 @@
   margin-inline-end: 0px;
 }
 
-/*
-.page * {
-  border: 1px solid red;
-}
-*/
-
-
 /* !!!---Начало стилей для блока content---!!! */
 
 /* Стили для темной темы блока content */
@@ -37,11 +30,12 @@
   position: relative;
   display: flex;
   background-color: #f2f2f2;
+  z-index: 1;
   /* выше установили ограничения для секции */
 }
 
 /* Стили для логотипа в блоке header */
-.header__logo {
+.logo {
   width: 183px;
   height: 32px;
 }
@@ -51,7 +45,6 @@
   position: absolute;
   top: 30px;
   left: 64px;
-  z-index: 5;
 }
 
 /* Стили для заголовка в блоке header */
@@ -60,13 +53,7 @@
   font-size: 102px;
   font-weight: bold;
   width: 730px;
-}
-
-/* Модификатор расположения заголовка в блоке header */
-.title_place_header {
-  z-index: 4;
   align-self: center;
-  position: absolute;
   margin-left: 64px;
 }
 
@@ -76,12 +63,8 @@
   font-size: 18px;
   font-weight: normal;
   width: 388px;
-}
-
-/* Модификатор расположения подзаголовка в блоке header */
-.subtitle_place_header {
-  z-index: 3;
   position: absolute;
+  margin: 0 auto;
   bottom: 30px;
   left: 64px;
 }
@@ -96,11 +79,6 @@
 .header__main-illustration {
   width: 765px;
   height: 608px;
-}
-
-/* Модификатор расположения основной иллюстрации в блоке header */
-.main-illustration_place_header {
-  z-index: 2;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -111,14 +89,10 @@
   background-color: #2f80ed;
   height: 568px;
   width: 568px;
-}
-
-/* Модификатор расположения квадрата в блоке header */
-.square-pic_place_header {
-  z-index: 1;
   position: absolute;
   top: 64px;
   right: 0;
+  z-index: -1;
 }
 
 /* !!!---Конец стилей для блока header---!!! */
@@ -140,8 +114,7 @@
   min-width: 784px;
   display: flex;
   justify-content: space-between;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
 }
 
 
@@ -152,6 +125,7 @@
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
+  margin: 0;
 }
 
 /* Стили для основного текста блока two-columns */
@@ -160,6 +134,11 @@
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
+}
+
+/* Стили для параграфа блока two-columns */
+.two-columns__paragraph {
+  margin: 0 auto;
 }
 
 /* Стили для выделения важного текста блока two-columns */
@@ -183,7 +162,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 0;
+  margin: 100px auto;
 }
 
 /* Стили для заголовка блока */
@@ -193,12 +172,7 @@
   font-weight: bold;
   width: 60%;
   text-align: center;
-}
-
-/* Модификатор расположения заголовка в блоке digits*/
-.section-title_position_digits {
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 /* Стили для подзаголовка */
@@ -208,12 +182,7 @@
   font-weight: normal;
   width: 60%;
   text-align: center;
-}
-
-/* Модификатор расположения подзаголовка в блоке digits */
-.section-subtitle_position_digits {
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin: 0 auto;
 }
 
 /* Стили для таблицы */
@@ -222,16 +191,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-/* Модификатор  расположения таблицы в блоке digits*/
-.table_place_digits {
   margin: 0 auto;
 }
 
 /* Стили для ячейки блока table */
 .table__cell {
   width: 250px;
+  margin: 60px 0;
 }
 
 /* Стили для заголовка блока cell */
@@ -239,6 +205,7 @@
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
+  margin: 0;
 }
 
 /* Стили для текста блока cell */
@@ -246,23 +213,7 @@
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
-}
-
-/* Модификатор отступа заголовка в блоке cell */
-.cell__heading_margin_bottom {
-  margin-bottom: 20px;
-}
-
-/* Стили для сноски блока cell */
-.cell__footnote {
-  margin-top: 20px;
-}
-
-/* Микс для переноса строки блока table, являющимся частью блока digits */
-.table__break_digits {
-  flex-basis: 100%;
-  width: 0;
-  margin-top: 60px;
+  margin: 20px 0 0;
 }
 
 /* !!!---Конец стилей для блока digits---!!! */
@@ -271,13 +222,17 @@
 
 /* Общие стили для блока feinman */
 .feinman {
+  background: url(../images/feynman.png) 867px 637px no-repeat;
+  background-position: bottom left;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 890px;
+  min-height: 790px;
   background-color: #f2f2f2;
+  z-index: 1;
 }
+
 
 /* Стили для заголовка блока feinman */
 .feinman__title {
@@ -286,13 +241,7 @@
   line-height: 1.15;
   font-size: 120px;
   font-weight: bold;
-}
-
-/* Модификатор расположения заголовка блока feinman */
-.title_place_feiman {
-  margin-top: 100px;
-  margin-bottom: 0;
-  z-index: 1;
+  margin: 0 auto;
 }
 
 /* Стили для подзаголовка блока feinman */
@@ -301,13 +250,7 @@
   line-height: 51px;
   font-size: 36px;
   font-weight: normal;
-}
-
-/* Модификатор расположения подзаголовка блока feinman */
-.subtitle_place_feiman {
-  margin-top: 70px;
-  margin-bottom: 0;
-  z-index: 1;
+  margin: 70px auto 0;
 }
 
 /* Стили для ссылок в блоке feinman */
@@ -317,26 +260,17 @@
   font-weight: normal;
   text-decoration: none;
   color: black;
-}
-
-/* Модификатор расположения ссылки в блоке feinman */
-.link_place_feinman {
   position: absolute;
   top: 50%;
   right: 48px;
-  z-index: 1;
 }
 
 /* Стили для иллюстрации в блоке feinman */
 .feinman__illustration {
   width: 867px;
   height: 637px;
-}
-
-/* Модификатор расположения иллюстрации в блоке feinman */
-.illustration_place_feinman {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   bottom: 0;
   left: 0;
 }
@@ -357,32 +291,29 @@
 }
 
 /* Модификатор расположения заголовка в блоке feinman */
-.section-title_position_feinman {
-  margin-top: 90px;
-  margin-bottom: 20px;
+.section-title_position_kaufman {
+  margin: 90px auto 20px;
 }
 
 /* модификатор расположения подзаголовка в блоке feinman */
-.section-subtitle_position_digits {
-  margin-top: 0;
-  margin-bottom: 0;
+.section-subtitle_position_kaufman {
+  margin: 0 auto;
 }
 
 /* Модификатор положения таблицы в блоке kaufman */
 .table_place_kaufman {
-  margin: 0 auto 90px auto;
-}
-
-/* Модификатор переноса строки блока table, являющимся частью блока kaufman */
-.table__break_kaufman {
-  flex-basis: 100%;
-  width: 0;
-  margin-top: 80px;
+  margin: 0 auto 90px;
 }
 
 /* Модификатор ширины ячейки блока table, являющимся частью блока kaufman */
-.table__cell_width_kaufman {
+.table__cell_place_kaufman {
+  margin: 80px 0;
   width: 200px;
+}
+
+/* Микс для ячейки */
+.cell_margin_null {
+  margin: 0;
 }
 
 /* Стили для картинки треугольника в блоке kaufman */
@@ -412,13 +343,9 @@
   justify-self: center;
   display: flex;
   justify-content: space-between;
-
-}
-
-/* Модификатор расположения колонн в блоке footer */
-.columns_place_footer {
   display: flex;
-  margin: 60px auto 40px auto;
+  margin: 60px auto 40px;
+
 }
 
 /* Модификатор стилей для информации первой колонны + расположение */
@@ -431,7 +358,7 @@
 }
 
 /* Модификатор расположения надписи автора в блоке footer */
-.author_place_footer {
+.footer__author {
   margin: 18px 0;
 }
 
@@ -440,17 +367,14 @@
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  margin: 20px auto 16px auto;
+  margin: 20px auto 16px;
+  list-style-type: none;
+  padding: 0;
 }
 
 /* Стили для заголовка колонны в блоке footer */
 .footer__column-heading {
   margin: 0 auto;
-}
-
-/* Микс для отступов в серединной ссылке в колонне */
-.column-links_margin_between {
-  margin: 10px 0;
 }
 
 /* Стили для ссылкок в блоке footer */
