@@ -13,13 +13,6 @@
   margin-inline-end: 0px;
 }
 
-/* !!!---Начало стилей для блока content---!!! */
-
-/* Стили для темной темы блока content */
-.content__theme_dark {
-  color: white;
-}
-
 /* !!!---Начало стилей для блока header---!!! */
 
 /* Общие стили для блока header */
@@ -117,6 +110,20 @@
   margin: 0 auto;
 }
 
+/* Стили для абзаца блока two-columns */
+.two-columns__paragraph {
+  margin: 30px 0;
+}
+
+/* Псевдокласс для обнуления верхнего отступа первого параграфа */
+.two-columns__paragraph:first-child {
+  margin-top: 0;
+}
+
+/* Псевдокласс для обнуления нижнего отступа последнего параграфа */
+.two-columns__paragraph:last-child {
+  margin-bottom: 0;
+}
 
 /* Стили для бриф текста блока two-columns */
 .two-columns__brief {
@@ -136,21 +143,11 @@
   font-weight: normal;
 }
 
-/* Стили для параграфа блока two-columns */
-.two-columns__paragraph {
-  margin: 0 auto;
-}
-
 /* Стили для выделения важного текста блока two-columns */
 .two-columns__span-accent {
   line-height: 34px;
   font-size: 24px;
   font-weight: bold;
-}
-
-/* Микс для отступов от соседних абзацев */
-.paragraph_margin-top-bottom {
-  margin: 30px 0;
 }
 
 /* !!!---Конец стилей для блока description---!!! */
@@ -192,16 +189,18 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
 }
 
 /* Стили для ячейки блока table */
 .table__cell {
   width: 250px;
-  margin: 60px 0;
+  margin: 60px 0 0;
 }
 
 /* Стили для заголовка блока cell */
-.cell__heading {
+.table__heading {
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
@@ -209,7 +208,7 @@
 }
 
 /* Стили для текста блока cell */
-.cell__text {
+.table__text {
   line-height: 1.2;
   font-size: 18px;
   font-weight: normal;
@@ -223,6 +222,7 @@
 /* Общие стили для блока feinman */
 .feinman {
   background: url(../images/feynman.png) 867px 637px no-repeat;
+  padding-top: 100px;
   background-position: bottom left;
   position: relative;
   display: flex;
@@ -280,44 +280,29 @@
 /* !!!---Начало стилей для блока kaufman---!!! */
 
 /* Общие стили для блока kaufman */
+
+/* Темная тема */
+.table__theme_dark {
+  color: white;
+  margin-top: 80px;
+  width: 200px;
+}
+
 .kaufman {
   background-color: #1f1f1f;
+  color: white;
   z-index: 0;
   display: flex;
   position: relative;
   flex-direction: column;
   overflow: hidden;
   align-items: center;
-}
-
-/* Модификатор расположения заголовка в блоке feinman */
-.section-title_position_kaufman {
-  margin: 90px auto 20px;
-}
-
-/* модификатор расположения подзаголовка в блоке feinman */
-.section-subtitle_position_kaufman {
+  padding: 90px 0;
   margin: 0 auto;
 }
 
-/* Модификатор положения таблицы в блоке kaufman */
-.table_place_kaufman {
-  margin: 0 auto 90px;
-}
-
-/* Модификатор ширины ячейки блока table, являющимся частью блока kaufman */
-.table__cell_place_kaufman {
-  margin: 80px 0;
-  width: 200px;
-}
-
-/* Микс для ячейки */
-.cell_margin_null {
-  margin: 0;
-}
-
 /* Треугольник, реализованный через псевдоэлемент */
-.kaufman::before {
+.kaufman:before {
   content: "";
   background-image: url(../images/kaufman-triangle.svg);
   background-size: contain;
@@ -338,6 +323,7 @@
   display: flex;
   background-color: #1f1f1f;
   min-height: 350px;
+  color: white;
 }
 
 /* Ситили колонн в блоке footer */
@@ -407,8 +393,7 @@
 .footer__social-icon {
   width: 16px;
   height: 16px;
+  margin-right: 10px;
 }
 
 /* !!!---Конец стилей для блока footer---!!! */
-
-/* !!!---Конец стилей для блока content---!!! */
