@@ -316,8 +316,11 @@
   margin: 0;
 }
 
-/* Стили для картинки треугольника в блоке kaufman */
-.kaufman__triangle {
+/* Треугольник, реализованный через псевдоэлемент */
+.kaufman::before {
+  content: "";
+  background-image: url(../images/kaufman-triangle.svg);
+  background-size: contain;
   position: absolute;
   width: 877px;
   height: 877px;
